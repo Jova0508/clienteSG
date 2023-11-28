@@ -1,336 +1,1228 @@
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * Delete the template below * * * * * * * * * -->
-<!-- * * * * * * * to get started with your project! * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<div class="layout-wrapper layout-content-navbar">
+  <div class="layout-container">
+    <!-- Menu -->
 
-<style>
-  :host {
-    --bright-blue: oklch(51.01% 0.274 263.83);
-    --electric-violet: oklch(53.18% 0.28 296.97);
-    --french-violet: oklch(47.66% 0.246 305.88);
-    --vivid-pink: oklch(69.02% 0.277 332.77);
-    --hot-red: oklch(61.42% 0.238 15.34);
-    --orange-red: oklch(63.32% 0.24 31.68);
-
-    --gray-900: oklch(19.37% 0.006 300.98);
-    --gray-700: oklch(36.98% 0.014 302.71);
-    --gray-400: oklch(70.9% 0.015 304.04);
-
-    --red-to-pink-to-purple-vertical-gradient: linear-gradient(
-      180deg,
-      var(--orange-red) 0%,
-      var(--vivid-pink) 50%,
-      var(--electric-violet) 100%
-    );
-
-    --red-to-pink-to-purple-horizontal-gradient: linear-gradient(
-      90deg,
-      var(--orange-red) 0%,
-      var(--vivid-pink) 50%,
-      var(--electric-violet) 100%
-    );
-
-    --pill-accent: var(--bright-blue);
-
-    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-      Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-      "Segoe UI Symbol";
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-
-  h1 {
-    font-size: 3.125rem;
-    color: var(--gray-900);
-    font-weight: 500;
-    line-height: 100%;
-    letter-spacing: -0.125rem;
-    margin: 0;
-    font-family: "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-      Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-      "Segoe UI Symbol";
-  }
-
-  p {
-    margin: 0;
-    color: var(--gray-700);
-  }
-
-  main {
-    width: 100%;
-    min-height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
-    box-sizing: inherit;
-    position: relative;
-  }
-
-  .angular-logo {
-    max-width: 9.2rem;
-  }
-
-  .content {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    max-width: 700px;
-    margin-bottom: 3rem;
-  }
-
-  .content h1 {
-    margin-top: 1.75rem;
-  }
-
-  .content p {
-    margin-top: 1.5rem;
-  }
-
-  .divider {
-    width: 1px;
-    background: var(--red-to-pink-to-purple-vertical-gradient);
-    margin-inline: 0.5rem;
-  }
-
-  .pill-group {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    flex-wrap: wrap;
-    gap: 1.25rem;
-  }
-
-  .pill {
-    display: flex;
-    align-items: center;
-    --pill-accent: var(--bright-blue);
-    background: color-mix(in srgb, var(--pill-accent) 5%, transparent);
-    color: var(--pill-accent);
-    padding-inline: 0.75rem;
-    padding-block: 0.375rem;
-    border-radius: 2.75rem;
-    border: 0;
-    transition: background 0.3s ease;
-    font-family: var(--inter-font);
-    font-size: 0.875rem;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 1.4rem;
-    letter-spacing: -0.00875rem;
-    text-decoration: none;
-  }
-
-  .pill:hover {
-    background: color-mix(in srgb, var(--pill-accent) 15%, transparent);
-  }
-
-  .pill-group .pill:nth-child(6n + 1) {
-    --pill-accent: var(--bright-blue);
-  }
-  .pill-group .pill:nth-child(6n + 2) {
-    --pill-accent: var(--french-violet);
-  }
-  .pill-group .pill:nth-child(6n + 3),
-  .pill-group .pill:nth-child(6n + 4),
-  .pill-group .pill:nth-child(6n + 5) {
-    --pill-accent: var(--hot-red);
-  }
-
-  .pill-group svg {
-    margin-inline-start: 0.25rem;
-  }
-
-  .social-links {
-    display: flex;
-    align-items: center;
-    gap: 0.73rem;
-    margin-top: 1.5rem;
-  }
-
-  .social-links path {
-    transition: fill 0.3s ease;
-    fill: var(--gray-400);
-  }
-
-  .social-links a:hover svg path {
-    fill: var(--gray-900);
-  }
-
-  @media screen and (max-width: 650px) {
-    .content {
-      flex-direction: column;
-      width: max-content;
-    }
-
-    .divider {
-      height: 1px;
-      width: 100%;
-      background: var(--red-to-pink-to-purple-horizontal-gradient);
-      margin-block: 1.5rem;
-    }
-  }
-</style>
-
-<main class="main">
-  <div class="content">
-    <div class="left-side">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 982 239"
-        fill="none"
-        class="angular-logo"
-      >
-        <g clip-path="url(#a)">
-          <path
-            fill="url(#b)"
-            d="M388.676 191.625h30.849L363.31 31.828h-35.758l-56.215 159.797h30.848l13.174-39.356h60.061l13.256 39.356Zm-65.461-62.675 21.602-64.311h1.227l21.602 64.311h-44.431Zm126.831-7.527v70.202h-28.23V71.839h27.002v20.374h1.392c2.782-6.71 7.2-12.028 13.255-15.956 6.056-3.927 13.584-5.89 22.503-5.89 8.264 0 15.465 1.8 21.684 5.318 6.137 3.518 10.964 8.673 14.319 15.382 3.437 6.71 5.074 14.81 4.992 24.383v76.175h-28.23v-71.92c0-8.019-2.046-14.237-6.219-18.819-4.173-4.5-9.819-6.791-17.102-6.791-4.91 0-9.328 1.063-13.174 3.272-3.846 2.128-6.792 5.237-9.001 9.328-2.046 4.009-3.191 8.918-3.191 14.728ZM589.233 239c-10.147 0-18.82-1.391-26.103-4.091-7.282-2.7-13.092-6.382-17.511-10.964-4.418-4.582-7.528-9.655-9.164-15.219l25.448-6.136c1.145 2.372 2.782 4.663 4.991 6.954 2.209 2.291 5.155 4.255 8.837 5.81 3.683 1.554 8.428 2.291 14.074 2.291 8.019 0 14.647-1.964 19.884-5.81 5.237-3.845 7.856-10.227 7.856-19.064v-22.665h-1.391c-1.473 2.946-3.601 5.892-6.383 9.001-2.782 3.109-6.464 5.645-10.965 7.691-4.582 2.046-10.228 3.109-17.101 3.109-9.165 0-17.511-2.209-25.039-6.545-7.446-4.337-13.42-10.883-17.757-19.474-4.418-8.673-6.628-19.473-6.628-32.565 0-13.091 2.21-24.301 6.628-33.383 4.419-9.082 10.311-15.955 17.839-20.7 7.528-4.746 15.874-7.037 25.039-7.037 7.037 0 12.846 1.145 17.347 3.518 4.582 2.373 8.182 5.236 10.883 8.51 2.7 3.272 4.746 6.382 6.137 9.327h1.554v-19.8h27.821v121.749c0 10.228-2.454 18.737-7.364 25.447-4.91 6.709-11.538 11.7-20.048 15.055-8.509 3.355-18.165 4.991-28.884 4.991Zm.245-71.266c5.974 0 11.047-1.473 15.302-4.337 4.173-2.945 7.446-7.118 9.573-12.519 2.21-5.482 3.274-12.027 3.274-19.637 0-7.609-1.064-14.155-3.274-19.8-2.127-5.646-5.318-10.064-9.491-13.255-4.174-3.11-9.329-4.746-15.384-4.746s-11.537 1.636-15.792 4.91c-4.173 3.272-7.365 7.772-9.492 13.418-2.128 5.727-3.191 12.191-3.191 19.392 0 7.2 1.063 13.745 3.273 19.228 2.127 5.482 5.318 9.736 9.573 12.764 4.174 3.027 9.41 4.582 15.629 4.582Zm141.56-26.51V71.839h28.23v119.786h-27.412v-21.273h-1.227c-2.7 6.709-7.119 12.191-13.338 16.446-6.137 4.255-13.747 6.382-22.748 6.382-7.855 0-14.81-1.718-20.783-5.237-5.974-3.518-10.72-8.591-14.075-15.382-3.355-6.709-5.073-14.891-5.073-24.464V71.839h28.312v71.921c0 7.609 2.046 13.664 6.219 18.083 4.173 4.5 9.655 6.709 16.365 6.709 4.173 0 8.183-.982 12.111-3.028 3.927-2.045 7.118-5.072 9.655-9.082 2.537-4.091 3.764-9.164 3.764-15.218Zm65.707-109.395v159.796h-28.23V31.828h28.23Zm44.841 162.169c-7.61 0-14.402-1.391-20.457-4.091-6.055-2.7-10.883-6.791-14.32-12.109-3.518-5.319-5.237-11.946-5.237-19.801 0-6.791 1.228-12.355 3.765-16.773 2.536-4.419 5.891-7.937 10.228-10.637 4.337-2.618 9.164-4.664 14.647-6.055 5.4-1.391 11.046-2.373 16.856-3.027 7.037-.737 12.683-1.391 17.102-1.964 4.337-.573 7.528-1.555 9.574-2.782 1.963-1.309 3.027-3.273 3.027-5.973v-.491c0-5.891-1.718-10.391-5.237-13.664-3.518-3.191-8.51-4.828-15.056-4.828-6.955 0-12.356 1.473-16.447 4.5-4.009 3.028-6.71 6.546-8.183 10.719l-26.348-3.764c2.046-7.282 5.483-13.336 10.31-18.328 4.746-4.909 10.638-8.59 17.511-11.045 6.955-2.455 14.565-3.682 22.912-3.682 5.809 0 11.537.654 17.265 2.045s10.965 3.6 15.711 6.71c4.746 3.109 8.51 7.282 11.455 12.6 2.864 5.318 4.337 11.946 4.337 19.883v80.184h-27.166v-16.446h-.9c-1.719 3.355-4.092 6.464-7.201 9.328-3.109 2.864-6.955 5.237-11.619 6.955-4.828 1.718-10.229 2.536-16.529 2.536Zm7.364-20.701c5.646 0 10.556-1.145 14.729-3.354 4.173-2.291 7.364-5.237 9.655-9.001 2.292-3.763 3.355-7.854 3.355-12.273v-14.155c-.9.737-2.373 1.391-4.5 2.046-2.128.654-4.419 1.145-7.037 1.636-2.619.491-5.155.9-7.692 1.227-2.537.328-4.746.655-6.628.901-4.173.572-8.019 1.472-11.292 2.781-3.355 1.31-5.973 3.11-7.855 5.401-1.964 2.291-2.864 5.318-2.864 8.918 0 5.237 1.882 9.164 5.728 11.782 3.682 2.782 8.51 4.091 14.401 4.091Zm64.643 18.328V71.839h27.412v19.965h1.227c2.21-6.955 5.974-12.274 11.292-16.038 5.319-3.763 11.456-5.645 18.329-5.645 1.555 0 3.355.082 5.237.163 1.964.164 3.601.328 4.91.573v25.938c-1.227-.41-3.109-.819-5.646-1.146a58.814 58.814 0 0 0-7.446-.49c-5.155 0-9.738 1.145-13.829 3.354-4.091 2.209-7.282 5.236-9.655 9.164-2.373 3.927-3.519 8.427-3.519 13.5v70.448h-28.312ZM222.077 39.192l-8.019 125.923L137.387 0l84.69 39.192Zm-53.105 162.825-57.933 33.056-57.934-33.056 11.783-28.556h92.301l11.783 28.556ZM111.039 62.675l30.357 73.803H80.681l30.358-73.803ZM7.937 165.115 0 39.192 84.69 0 7.937 165.115Z"
-          />
-          <path
-            fill="url(#c)"
-            d="M388.676 191.625h30.849L363.31 31.828h-35.758l-56.215 159.797h30.848l13.174-39.356h60.061l13.256 39.356Zm-65.461-62.675 21.602-64.311h1.227l21.602 64.311h-44.431Zm126.831-7.527v70.202h-28.23V71.839h27.002v20.374h1.392c2.782-6.71 7.2-12.028 13.255-15.956 6.056-3.927 13.584-5.89 22.503-5.89 8.264 0 15.465 1.8 21.684 5.318 6.137 3.518 10.964 8.673 14.319 15.382 3.437 6.71 5.074 14.81 4.992 24.383v76.175h-28.23v-71.92c0-8.019-2.046-14.237-6.219-18.819-4.173-4.5-9.819-6.791-17.102-6.791-4.91 0-9.328 1.063-13.174 3.272-3.846 2.128-6.792 5.237-9.001 9.328-2.046 4.009-3.191 8.918-3.191 14.728ZM589.233 239c-10.147 0-18.82-1.391-26.103-4.091-7.282-2.7-13.092-6.382-17.511-10.964-4.418-4.582-7.528-9.655-9.164-15.219l25.448-6.136c1.145 2.372 2.782 4.663 4.991 6.954 2.209 2.291 5.155 4.255 8.837 5.81 3.683 1.554 8.428 2.291 14.074 2.291 8.019 0 14.647-1.964 19.884-5.81 5.237-3.845 7.856-10.227 7.856-19.064v-22.665h-1.391c-1.473 2.946-3.601 5.892-6.383 9.001-2.782 3.109-6.464 5.645-10.965 7.691-4.582 2.046-10.228 3.109-17.101 3.109-9.165 0-17.511-2.209-25.039-6.545-7.446-4.337-13.42-10.883-17.757-19.474-4.418-8.673-6.628-19.473-6.628-32.565 0-13.091 2.21-24.301 6.628-33.383 4.419-9.082 10.311-15.955 17.839-20.7 7.528-4.746 15.874-7.037 25.039-7.037 7.037 0 12.846 1.145 17.347 3.518 4.582 2.373 8.182 5.236 10.883 8.51 2.7 3.272 4.746 6.382 6.137 9.327h1.554v-19.8h27.821v121.749c0 10.228-2.454 18.737-7.364 25.447-4.91 6.709-11.538 11.7-20.048 15.055-8.509 3.355-18.165 4.991-28.884 4.991Zm.245-71.266c5.974 0 11.047-1.473 15.302-4.337 4.173-2.945 7.446-7.118 9.573-12.519 2.21-5.482 3.274-12.027 3.274-19.637 0-7.609-1.064-14.155-3.274-19.8-2.127-5.646-5.318-10.064-9.491-13.255-4.174-3.11-9.329-4.746-15.384-4.746s-11.537 1.636-15.792 4.91c-4.173 3.272-7.365 7.772-9.492 13.418-2.128 5.727-3.191 12.191-3.191 19.392 0 7.2 1.063 13.745 3.273 19.228 2.127 5.482 5.318 9.736 9.573 12.764 4.174 3.027 9.41 4.582 15.629 4.582Zm141.56-26.51V71.839h28.23v119.786h-27.412v-21.273h-1.227c-2.7 6.709-7.119 12.191-13.338 16.446-6.137 4.255-13.747 6.382-22.748 6.382-7.855 0-14.81-1.718-20.783-5.237-5.974-3.518-10.72-8.591-14.075-15.382-3.355-6.709-5.073-14.891-5.073-24.464V71.839h28.312v71.921c0 7.609 2.046 13.664 6.219 18.083 4.173 4.5 9.655 6.709 16.365 6.709 4.173 0 8.183-.982 12.111-3.028 3.927-2.045 7.118-5.072 9.655-9.082 2.537-4.091 3.764-9.164 3.764-15.218Zm65.707-109.395v159.796h-28.23V31.828h28.23Zm44.841 162.169c-7.61 0-14.402-1.391-20.457-4.091-6.055-2.7-10.883-6.791-14.32-12.109-3.518-5.319-5.237-11.946-5.237-19.801 0-6.791 1.228-12.355 3.765-16.773 2.536-4.419 5.891-7.937 10.228-10.637 4.337-2.618 9.164-4.664 14.647-6.055 5.4-1.391 11.046-2.373 16.856-3.027 7.037-.737 12.683-1.391 17.102-1.964 4.337-.573 7.528-1.555 9.574-2.782 1.963-1.309 3.027-3.273 3.027-5.973v-.491c0-5.891-1.718-10.391-5.237-13.664-3.518-3.191-8.51-4.828-15.056-4.828-6.955 0-12.356 1.473-16.447 4.5-4.009 3.028-6.71 6.546-8.183 10.719l-26.348-3.764c2.046-7.282 5.483-13.336 10.31-18.328 4.746-4.909 10.638-8.59 17.511-11.045 6.955-2.455 14.565-3.682 22.912-3.682 5.809 0 11.537.654 17.265 2.045s10.965 3.6 15.711 6.71c4.746 3.109 8.51 7.282 11.455 12.6 2.864 5.318 4.337 11.946 4.337 19.883v80.184h-27.166v-16.446h-.9c-1.719 3.355-4.092 6.464-7.201 9.328-3.109 2.864-6.955 5.237-11.619 6.955-4.828 1.718-10.229 2.536-16.529 2.536Zm7.364-20.701c5.646 0 10.556-1.145 14.729-3.354 4.173-2.291 7.364-5.237 9.655-9.001 2.292-3.763 3.355-7.854 3.355-12.273v-14.155c-.9.737-2.373 1.391-4.5 2.046-2.128.654-4.419 1.145-7.037 1.636-2.619.491-5.155.9-7.692 1.227-2.537.328-4.746.655-6.628.901-4.173.572-8.019 1.472-11.292 2.781-3.355 1.31-5.973 3.11-7.855 5.401-1.964 2.291-2.864 5.318-2.864 8.918 0 5.237 1.882 9.164 5.728 11.782 3.682 2.782 8.51 4.091 14.401 4.091Zm64.643 18.328V71.839h27.412v19.965h1.227c2.21-6.955 5.974-12.274 11.292-16.038 5.319-3.763 11.456-5.645 18.329-5.645 1.555 0 3.355.082 5.237.163 1.964.164 3.601.328 4.91.573v25.938c-1.227-.41-3.109-.819-5.646-1.146a58.814 58.814 0 0 0-7.446-.49c-5.155 0-9.738 1.145-13.829 3.354-4.091 2.209-7.282 5.236-9.655 9.164-2.373 3.927-3.519 8.427-3.519 13.5v70.448h-28.312ZM222.077 39.192l-8.019 125.923L137.387 0l84.69 39.192Zm-53.105 162.825-57.933 33.056-57.934-33.056 11.783-28.556h92.301l11.783 28.556ZM111.039 62.675l30.357 73.803H80.681l30.358-73.803ZM7.937 165.115 0 39.192 84.69 0 7.937 165.115Z"
-          />
-        </g>
-        <defs>
-          <radialGradient
-            id="c"
-            cx="0"
-            cy="0"
-            r="1"
-            gradientTransform="rotate(118.122 171.182 60.81) scale(205.794)"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop stop-color="#FF41F8" />
-            <stop offset=".707" stop-color="#FF41F8" stop-opacity=".5" />
-            <stop offset="1" stop-color="#FF41F8" stop-opacity="0" />
-          </radialGradient>
-          <linearGradient
-            id="b"
-            x1="0"
-            x2="982"
-            y1="192"
-            y2="192"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop stop-color="#F0060B" />
-            <stop offset="0" stop-color="#F0070C" />
-            <stop offset=".526" stop-color="#CC26D5" />
-            <stop offset="1" stop-color="#7702FF" />
-          </linearGradient>
-          <clipPath id="a"><path fill="#fff" d="M0 0h982v239H0z" /></clipPath>
-        </defs>
-      </svg>
-      <h1>Hello, {{ title }}</h1>
-      <p>Congratulations! Your app is running. 🎉</p>
-    </div>
-    <div class="divider" role="separator" aria-label="Divider"></div>
-    <div class="right-side">
-      <div class="pill-group">
-        @for (item of [
-          { title: 'Explore the Docs', link: 'https://angular.dev' },
-          { title: 'Learn with Tutorials', link: 'https://angular.dev/tutorials' },
-          { title: 'CLI Docs', link: 'https://angular.dev/tools/cli' },
-          { title: 'Angular Language Service', link: 'https://angular.dev/tools/language-service' },
-          { title: 'Angular DevTools', link: 'https://angular.dev/tools/devtools' },
-        ]; track item.title) {
-          <a
-            class="pill"
-            [href]="item.link"
-            target="_blank"
-            rel="noopener"
-          >
-            <span>{{ item.title }}</span>
+    <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
+      <div class="app-brand demo">
+        <a href="index.html" class="app-brand-link">
+          <span class="app-brand-logo demo">
             <svg
+              width="25"
+              viewBox="0 0 25 42"
+              version="1.1"
               xmlns="http://www.w3.org/2000/svg"
-              height="14"
-              viewBox="0 -960 960 960"
-              width="14"
-              fill="currentColor"
-            >
-              <path
-                d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z"
-              />
+              xmlns:xlink="http://www.w3.org/1999/xlink">
+              <defs>
+                <path
+                  d="M13.7918663,0.358365126 L3.39788168,7.44174259 C0.566865006,9.69408886 -0.379795268,12.4788597 0.557900856,15.7960551 C0.68998853,16.2305145 1.09562888,17.7872135 3.12357076,19.2293357 C3.8146334,19.7207684 5.32369333,20.3834223 7.65075054,21.2172976 L7.59773219,21.2525164 L2.63468769,24.5493413 C0.445452254,26.3002124 0.0884951797,28.5083815 1.56381646,31.1738486 C2.83770406,32.8170431 5.20850219,33.2640127 7.09180128,32.5391577 C8.347334,32.0559211 11.4559176,30.0011079 16.4175519,26.3747182 C18.0338572,24.4997857 18.6973423,22.4544883 18.4080071,20.2388261 C17.963753,17.5346866 16.1776345,15.5799961 13.0496516,14.3747546 L10.9194936,13.4715819 L18.6192054,7.984237 L13.7918663,0.358365126 Z"
+                  id="path-1"></path>
+                <path
+                  d="M5.47320593,6.00457225 C4.05321814,8.216144 4.36334763,10.0722806 6.40359441,11.5729822 C8.61520715,12.571656 10.0999176,13.2171421 10.8577257,13.5094407 L15.5088241,14.433041 L18.6192054,7.984237 C15.5364148,3.11535317 13.9273018,0.573395879 13.7918663,0.358365126 C13.5790555,0.511491653 10.8061687,2.3935607 5.47320593,6.00457225 Z"
+                  id="path-3"></path>
+                <path
+                  d="M7.50063644,21.2294429 L12.3234468,23.3159332 C14.1688022,24.7579751 14.397098,26.4880487 13.008334,28.506154 C11.6195701,30.5242593 10.3099883,31.790241 9.07958868,32.3040991 C5.78142938,33.4346997 4.13234973,34 4.13234973,34 C4.13234973,34 2.75489982,33.0538207 2.37032616e-14,31.1614621 C-0.55822714,27.8186216 -0.55822714,26.0572515 -4.05231404e-15,25.8773518 C0.83734071,25.6075023 2.77988457,22.8248993 3.3049379,22.52991 C3.65497346,22.3332504 5.05353963,21.8997614 7.50063644,21.2294429 Z"
+                  id="path-4"></path>
+                <path
+                  d="M20.6,7.13333333 L25.6,13.8 C26.2627417,14.6836556 26.0836556,15.9372583 25.2,16.6 C24.8538077,16.8596443 24.4327404,17 24,17 L14,17 C12.8954305,17 12,16.1045695 12,15 C12,14.5672596 12.1403557,14.1461923 12.4,13.8 L17.4,7.13333333 C18.0627417,6.24967773 19.3163444,6.07059163 20.2,6.73333333 C20.3516113,6.84704183 20.4862915,6.981722 20.6,7.13333333 Z"
+                  id="path-5"></path>
+              </defs>
+              <g id="g-app-brand" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <g id="Brand-Logo" transform="translate(-27.000000, -15.000000)">
+                  <g id="Icon" transform="translate(27.000000, 15.000000)">
+                    <g id="Mask" transform="translate(0.000000, 8.000000)">
+                      <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                      </mask>
+                      <use fill="#696cff" xlink:href="#path-1"></use>
+                      <g id="Path-3" mask="url(#mask-2)">
+                        <use fill="#696cff" xlink:href="#path-3"></use>
+                        <use fill-opacity="0.2" fill="#FFFFFF" xlink:href="#path-3"></use>
+                      </g>
+                      <g id="Path-4" mask="url(#mask-2)">
+                        <use fill="#696cff" xlink:href="#path-4"></use>
+                        <use fill-opacity="0.2" fill="#FFFFFF" xlink:href="#path-4"></use>
+                      </g>
+                    </g>
+                    <g
+                      id="Triangle"
+                      transform="translate(19.000000, 11.000000) rotate(-300.000000) translate(-19.000000, -11.000000) ">
+                      <use fill="#696cff" xlink:href="#path-5"></use>
+                      <use fill-opacity="0.2" fill="#FFFFFF" xlink:href="#path-5"></use>
+                    </g>
+                  </g>
+                </g>
+              </g>
             </svg>
-          </a>
-        }
-      </div>
-      <div class="social-links">
-        <a
-          href="https://github.com/angular/angular"
-          aria-label="Github"
-          target="_blank"
-          rel="noopener"
-        >
-          <svg
-            width="25"
-            height="24"
-            viewBox="0 0 25 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            alt="Github"
-          >
-            <path
-              d="M12.3047 0C5.50634 0 0 5.50942 0 12.3047C0 17.7423 3.52529 22.3535 8.41332 23.9787C9.02856 24.0946 9.25414 23.7142 9.25414 23.3871C9.25414 23.0949 9.24389 22.3207 9.23876 21.2953C5.81601 22.0377 5.09414 19.6444 5.09414 19.6444C4.53427 18.2243 3.72524 17.8449 3.72524 17.8449C2.61064 17.082 3.81137 17.0973 3.81137 17.0973C5.04697 17.1835 5.69604 18.3647 5.69604 18.3647C6.79321 20.2463 8.57636 19.7029 9.27978 19.3881C9.39052 18.5924 9.70736 18.0499 10.0591 17.7423C7.32641 17.4347 4.45429 16.3765 4.45429 11.6618C4.45429 10.3185 4.9311 9.22133 5.72065 8.36C5.58222 8.04931 5.16694 6.79833 5.82831 5.10337C5.82831 5.10337 6.85883 4.77319 9.2121 6.36459C10.1965 6.09082 11.2424 5.95546 12.2883 5.94931C13.3342 5.95546 14.3801 6.09082 15.3644 6.36459C17.7023 4.77319 18.7328 5.10337 18.7328 5.10337C19.3942 6.79833 18.9789 8.04931 18.8559 8.36C19.6403 9.22133 20.1171 10.3185 20.1171 11.6618C20.1171 16.3888 17.2409 17.4296 14.5031 17.7321C14.9338 18.1012 15.3337 18.8559 15.3337 20.0084C15.3337 21.6552 15.3183 22.978 15.3183 23.3779C15.3183 23.7009 15.5336 24.0854 16.1642 23.9623C21.0871 22.3484 24.6094 17.7341 24.6094 12.3047C24.6094 5.50942 19.0999 0 12.3047 0Z"
-            />
-          </svg>
+          </span>
+          <span class="app-brand-text demo menu-text fw-bold ms-2">Sneat</span>
         </a>
-        <a
-          href="https://twitter.com/angular"
-          aria-label="Twitter"
-          target="_blank"
-          rel="noopener"
-        >
-          <svg
-            width="25"
-            height="20"
-            viewBox="0 0 25 20"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            alt="Twitter"
-          >
-            <path
-              d="M8.04524 20C17.3335 20 22.4138 12.3047 22.4138 5.63144C22.4138 5.41287 22.4138 5.19529 22.399 4.97869C23.3874 4.26381 24.2405 3.37867 24.9185 2.3647C23.9969 2.77329 23.0192 3.04112 22.018 3.15923C23.0723 2.52818 23.8613 1.53552 24.2382 0.366057C23.2469 0.954335 22.1624 1.36889 21.0315 1.59182C20.2701 0.782212 19.2631 0.246107 18.1663 0.0664704C17.0695 -0.113166 15.9441 0.0736804 14.9642 0.598096C13.9843 1.12251 13.2046 1.95526 12.7457 2.96748C12.2868 3.9797 12.1742 5.11495 12.4255 6.19756C10.4178 6.09685 8.45366 5.57507 6.66064 4.66609C4.86763 3.75712 3.28579 2.48127 2.01781 0.921344C1.37203 2.03306 1.17424 3.34911 1.46472 4.60154C1.75519 5.85397 2.51208 6.9486 3.58128 7.66257C2.77759 7.63903 1.9914 7.42221 1.28924 7.03049V7.09449C1.28956 8.26041 1.69316 9.39034 2.4316 10.2926C3.17003 11.1949 4.19783 11.8139 5.34067 12.0448C4.59721 12.2476 3.81715 12.2772 3.06045 12.1315C3.38327 13.1348 4.01156 14.0122 4.85746 14.641C5.70337 15.2698 6.72461 15.6185 7.77842 15.6384C6.73139 16.4614 5.53237 17.0699 4.24995 17.4291C2.96753 17.7882 1.62687 17.891 0.304688 17.7316C2.61411 19.2136 5.30121 19.9997 8.04524 19.9961"
-            />
-          </svg>
-        </a>
-        <a
-          href="https://www.youtube.com/channel/UCbn1OgGei-DV7aSRo_HaAiw"
-          aria-label="Youtube"
-          target="_blank"
-          rel="noopener"
-        >
-          <svg
-            width="29"
-            height="20"
-            viewBox="0 0 29 20"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            alt="Youtube"
-          >
-            <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M27.4896 1.52422C27.9301 1.96749 28.2463 2.51866 28.4068 3.12258C29.0004 5.35161 29.0004 10 29.0004 10C29.0004 10 29.0004 14.6484 28.4068 16.8774C28.2463 17.4813 27.9301 18.0325 27.4896 18.4758C27.0492 18.9191 26.5 19.2389 25.8972 19.4032C23.6778 20 14.8068 20 14.8068 20C14.8068 20 5.93586 20 3.71651 19.4032C3.11363 19.2389 2.56449 18.9191 2.12405 18.4758C1.68361 18.0325 1.36732 17.4813 1.20683 16.8774C0.613281 14.6484 0.613281 10 0.613281 10C0.613281 10 0.613281 5.35161 1.20683 3.12258C1.36732 2.51866 1.68361 1.96749 2.12405 1.52422C2.56449 1.08095 3.11363 0.76113 3.71651 0.596774C5.93586 0 14.8068 0 14.8068 0C14.8068 0 23.6778 0 25.8972 0.596774C26.5 0.76113 27.0492 1.08095 27.4896 1.52422ZM19.3229 10L11.9036 5.77905V14.221L19.3229 10Z"
-            />
-          </svg>
-        </a>
-      </div>
-    </div>
-  </div>
-</main>
 
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+        <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
+          <i class="bx bx-chevron-left bx-sm align-middle"></i>
+        </a>
+      </div>
+
+      <div class="menu-inner-shadow"></div>
+
+      <ul class="menu-inner py-1">
+        <!-- Dashboards -->
+        <li class="menu-item active open">
+          <a href="javascript:void(0);" class="menu-link menu-toggle">
+            <i class="menu-icon tf-icons bx bx-home-circle"></i>
+            <div data-i18n="Dashboards">Dashboards</div>
+            <div class="badge bg-danger rounded-pill ms-auto">5</div>
+          </a>
+          <ul class="menu-sub">
+            <li class="menu-item">
+              <a
+                href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/html/vertical-menu-template/dashboards-crm.html"
+                target="_blank"
+                class="menu-link">
+                <div data-i18n="CRM">CRM</div>
+                <div class="badge bg-label-primary fs-tiny rounded-pill ms-auto">Pro</div>
+              </a>
+            </li>
+            <li class="menu-item active">
+              <a href="index.html" class="menu-link">
+                <div data-i18n="Analytics">Analytics</div>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a
+                href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/html/vertical-menu-template/app-ecommerce-dashboard.html"
+                target="_blank"
+                class="menu-link">
+                <div data-i18n="eCommerce">eCommerce</div>
+                <div class="badge bg-label-primary fs-tiny rounded-pill ms-auto">Pro</div>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a
+                href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/html/vertical-menu-template/app-logistics-dashboard.html"
+                target="_blank"
+                class="menu-link">
+                <div data-i18n="Logistics">Logistics</div>
+                <div class="badge bg-label-primary fs-tiny rounded-pill ms-auto">Pro</div>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a
+                href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/html/vertical-menu-template/app-academy-dashboard.html"
+                target="_blank"
+                class="menu-link">
+                <div data-i18n="Academy">Academy</div>
+                <div class="badge bg-label-primary fs-tiny rounded-pill ms-auto">Pro</div>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <!-- Layouts -->
+        <li class="menu-item">
+          <a href="javascript:void(0);" class="menu-link menu-toggle">
+            <i class="menu-icon tf-icons bx bx-layout"></i>
+            <div data-i18n="Layouts">Layouts</div>
+          </a>
+
+          <ul class="menu-sub">
+            <li class="menu-item">
+              <a href="layouts-without-menu.html" class="menu-link">
+                <div data-i18n="Without menu">Without menu</div>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="layouts-without-navbar.html" class="menu-link">
+                <div data-i18n="Without navbar">Without navbar</div>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="layouts-container.html" class="menu-link">
+                <div data-i18n="Container">Container</div>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="layouts-fluid.html" class="menu-link">
+                <div data-i18n="Fluid">Fluid</div>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="layouts-blank.html" class="menu-link">
+                <div data-i18n="Blank">Blank</div>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <!-- Front Pages -->
+        <li class="menu-item">
+          <a href="javascript:void(0);" class="menu-link menu-toggle">
+            <i class="menu-icon tf-icons bx bx-store"></i>
+            <div data-i18n="Front Pages">Front Pages</div>
+            <div class="badge bg-label-primary fs-tiny rounded-pill ms-auto">Pro</div>
+          </a>
+          <ul class="menu-sub">
+            <li class="menu-item">
+              <a
+                href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/html/front-pages/landing-page.html"
+                class="menu-link"
+                target="_blank">
+                <div data-i18n="Landing">Landing</div>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a
+                href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/html/front-pages/pricing-page.html"
+                class="menu-link"
+                target="_blank">
+                <div data-i18n="Pricing">Pricing</div>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a
+                href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/html/front-pages/payment-page.html"
+                class="menu-link"
+                target="_blank">
+                <div data-i18n="Payment">Payment</div>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a
+                href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/html/front-pages/checkout-page.html"
+                class="menu-link"
+                target="_blank">
+                <div data-i18n="Checkout">Checkout</div>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a
+                href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/html/front-pages/help-center-landing.html"
+                class="menu-link"
+                target="_blank">
+                <div data-i18n="Help Center">Help Center</div>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="menu-header small text-uppercase">
+          <span class="menu-header-text">Apps &amp; Pages</span>
+        </li>
+        <!-- Apps -->
+        <li class="menu-item">
+          <a
+            href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/html/vertical-menu-template/app-email.html"
+            target="_blank"
+            class="menu-link">
+            <i class="menu-icon tf-icons bx bx-envelope"></i>
+            <div data-i18n="Email">Email</div>
+            <div class="badge bg-label-primary fs-tiny rounded-pill ms-auto">Pro</div>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a
+            href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/html/vertical-menu-template/app-chat.html"
+            target="_blank"
+            class="menu-link">
+            <i class="menu-icon tf-icons bx bx-chat"></i>
+            <div data-i18n="Chat">Chat</div>
+            <div class="badge bg-label-primary fs-tiny rounded-pill ms-auto">Pro</div>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a
+            href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/html/vertical-menu-template/app-calendar.html"
+            target="_blank"
+            class="menu-link">
+            <i class="menu-icon tf-icons bx bx-calendar"></i>
+            <div data-i18n="Calendar">Calendar</div>
+            <div class="badge bg-label-primary fs-tiny rounded-pill ms-auto">Pro</div>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a
+            href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/html/vertical-menu-template/app-kanban.html"
+            target="_blank"
+            class="menu-link">
+            <i class="menu-icon tf-icons bx bx-grid"></i>
+            <div data-i18n="Kanban">Kanban</div>
+            <div class="badge bg-label-primary fs-tiny rounded-pill ms-auto">Pro</div>
+          </a>
+        </li>
+        <!-- Pages -->
+        <li class="menu-item">
+          <a href="javascript:void(0);" class="menu-link menu-toggle">
+            <i class="menu-icon tf-icons bx bx-dock-top"></i>
+            <div data-i18n="Account Settings">Account Settings</div>
+          </a>
+          <ul class="menu-sub">
+            <li class="menu-item">
+              <a href="pages-account-settings-account.html" class="menu-link">
+                <div data-i18n="Account">Account</div>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="pages-account-settings-notifications.html" class="menu-link">
+                <div data-i18n="Notifications">Notifications</div>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="pages-account-settings-connections.html" class="menu-link">
+                <div data-i18n="Connections">Connections</div>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="menu-item">
+          <a href="javascript:void(0);" class="menu-link menu-toggle">
+            <i class="menu-icon tf-icons bx bx-lock-open-alt"></i>
+            <div data-i18n="Authentications">Authentications</div>
+          </a>
+          <ul class="menu-sub">
+            <li class="menu-item">
+              <a href="auth-login-basic.html" class="menu-link" target="_blank">
+                <div data-i18n="Basic">Login</div>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="auth-register-basic.html" class="menu-link" target="_blank">
+                <div data-i18n="Basic">Register</div>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="auth-forgot-password-basic.html" class="menu-link" target="_blank">
+                <div data-i18n="Basic">Forgot Password</div>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="menu-item">
+          <a href="javascript:void(0);" class="menu-link menu-toggle">
+            <i class="menu-icon tf-icons bx bx-cube-alt"></i>
+            <div data-i18n="Misc">Misc</div>
+          </a>
+          <ul class="menu-sub">
+            <li class="menu-item">
+              <a href="pages-misc-error.html" class="menu-link">
+                <div data-i18n="Error">Error</div>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="pages-misc-under-maintenance.html" class="menu-link">
+                <div data-i18n="Under Maintenance">Under Maintenance</div>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <!-- Components -->
+        <li class="menu-header small text-uppercase"><span class="menu-header-text">Components</span></li>
+        <!-- Cards -->
+        <li class="menu-item">
+          <a href="cards-basic.html" class="menu-link">
+            <i class="menu-icon tf-icons bx bx-collection"></i>
+            <div data-i18n="Basic">Cards</div>
+          </a>
+        </li>
+        <!-- User interface -->
+        <li class="menu-item">
+          <a href="javascript:void(0)" class="menu-link menu-toggle">
+            <i class="menu-icon tf-icons bx bx-box"></i>
+            <div data-i18n="User interface">User interface</div>
+          </a>
+          <ul class="menu-sub">
+            <li class="menu-item">
+              <a href="ui-accordion.html" class="menu-link">
+                <div data-i18n="Accordion">Accordion</div>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="ui-alerts.html" class="menu-link">
+                <div data-i18n="Alerts">Alerts</div>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="ui-badges.html" class="menu-link">
+                <div data-i18n="Badges">Badges</div>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="ui-buttons.html" class="menu-link">
+                <div data-i18n="Buttons">Buttons</div>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="ui-carousel.html" class="menu-link">
+                <div data-i18n="Carousel">Carousel</div>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="ui-collapse.html" class="menu-link">
+                <div data-i18n="Collapse">Collapse</div>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="ui-dropdowns.html" class="menu-link">
+                <div data-i18n="Dropdowns">Dropdowns</div>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="ui-footer.html" class="menu-link">
+                <div data-i18n="Footer">Footer</div>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="ui-list-groups.html" class="menu-link">
+                <div data-i18n="List Groups">List groups</div>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="ui-modals.html" class="menu-link">
+                <div data-i18n="Modals">Modals</div>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="ui-navbar.html" class="menu-link">
+                <div data-i18n="Navbar">Navbar</div>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="ui-offcanvas.html" class="menu-link">
+                <div data-i18n="Offcanvas">Offcanvas</div>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="ui-pagination-breadcrumbs.html" class="menu-link">
+                <div data-i18n="Pagination &amp; Breadcrumbs">Pagination &amp; Breadcrumbs</div>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="ui-progress.html" class="menu-link">
+                <div data-i18n="Progress">Progress</div>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="ui-spinners.html" class="menu-link">
+                <div data-i18n="Spinners">Spinners</div>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="ui-tabs-pills.html" class="menu-link">
+                <div data-i18n="Tabs &amp; Pills">Tabs &amp; Pills</div>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="ui-toasts.html" class="menu-link">
+                <div data-i18n="Toasts">Toasts</div>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="ui-tooltips-popovers.html" class="menu-link">
+                <div data-i18n="Tooltips & Popovers">Tooltips &amp; popovers</div>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="ui-typography.html" class="menu-link">
+                <div data-i18n="Typography">Typography</div>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <!-- Extended components -->
+        <li class="menu-item">
+          <a href="javascript:void(0)" class="menu-link menu-toggle">
+            <i class="menu-icon tf-icons bx bx-copy"></i>
+            <div data-i18n="Extended UI">Extended UI</div>
+          </a>
+          <ul class="menu-sub">
+            <li class="menu-item">
+              <a href="extended-ui-perfect-scrollbar.html" class="menu-link">
+                <div data-i18n="Perfect Scrollbar">Perfect scrollbar</div>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="extended-ui-text-divider.html" class="menu-link">
+                <div data-i18n="Text Divider">Text Divider</div>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="menu-item">
+          <a href="icons-boxicons.html" class="menu-link">
+            <i class="menu-icon tf-icons bx bx-crown"></i>
+            <div data-i18n="Boxicons">Boxicons</div>
+          </a>
+        </li>
+
+        <!-- Forms & Tables -->
+        <li class="menu-header small text-uppercase"><span class="menu-header-text">Forms &amp; Tables</span></li>
+        <!-- Forms -->
+        <li class="menu-item">
+          <a href="javascript:void(0);" class="menu-link menu-toggle">
+            <i class="menu-icon tf-icons bx bx-detail"></i>
+            <div data-i18n="Form Elements">Form Elements</div>
+          </a>
+          <ul class="menu-sub">
+            <li class="menu-item">
+              <a href="forms-basic-inputs.html" class="menu-link">
+                <div data-i18n="Basic Inputs">Basic Inputs</div>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="forms-input-groups.html" class="menu-link">
+                <div data-i18n="Input groups">Input groups</div>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="menu-item">
+          <a href="javascript:void(0);" class="menu-link menu-toggle">
+            <i class="menu-icon tf-icons bx bx-detail"></i>
+            <div data-i18n="Form Layouts">Form Layouts</div>
+          </a>
+          <ul class="menu-sub">
+            <li class="menu-item">
+              <a href="form-layouts-vertical.html" class="menu-link">
+                <div data-i18n="Vertical Form">Vertical Form</div>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="form-layouts-horizontal.html" class="menu-link">
+                <div data-i18n="Horizontal Form">Horizontal Form</div>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <!-- Form Validation -->
+        <li class="menu-item">
+          <a
+            href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/html/vertical-menu-template/form-validation.html"
+            target="_blank"
+            class="menu-link">
+            <i class="menu-icon tf-icons bx bx-list-check"></i>
+            <div data-i18n="Form Validation">Form Validation</div>
+            <div class="badge bg-label-primary fs-tiny rounded-pill ms-auto">Pro</div>
+          </a>
+        </li>
+        <!-- Tables -->
+        <li class="menu-item">
+          <a href="tables-basic.html" class="menu-link">
+            <i class="menu-icon tf-icons bx bx-table"></i>
+            <div data-i18n="Tables">Tables</div>
+          </a>
+        </li>
+        <!-- Data Tables -->
+        <li class="menu-item">
+          <a
+            href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/html/vertical-menu-template/tables-datatables-basic.html"
+            target="_blank"
+            class="menu-link">
+            <i class="menu-icon tf-icons bx bx-grid"></i>
+            <div data-i18n="Datatables">Datatables</div>
+            <div class="badge bg-label-primary fs-tiny rounded-pill ms-auto">Pro</div>
+          </a>
+        </li>
+        <!-- Misc -->
+        <li class="menu-header small text-uppercase"><span class="menu-header-text">Misc</span></li>
+        <li class="menu-item">
+          <a
+            href="https://github.com/themeselection/sneat-html-admin-template-free/issues"
+            target="_blank"
+            class="menu-link">
+            <i class="menu-icon tf-icons bx bx-support"></i>
+            <div data-i18n="Support">Support</div>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a
+            href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/documentation/"
+            target="_blank"
+            class="menu-link">
+            <i class="menu-icon tf-icons bx bx-file"></i>
+            <div data-i18n="Documentation">Documentation</div>
+          </a>
+        </li>
+      </ul>
+    </aside>
+    <!-- / Menu -->
+
+    <!-- Layout container -->
+    <div class="layout-page">
+      <!-- Navbar -->
+
+      <nav
+        class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
+        id="layout-navbar">
+        <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
+          <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)">
+            <i class="bx bx-menu bx-sm"></i>
+          </a>
+        </div>
+
+        <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
+          <!-- Search -->
+          <div class="navbar-nav align-items-center">
+            <div class="nav-item d-flex align-items-center">
+              <i class="bx bx-search fs-4 lh-0"></i>
+              <input
+                type="text"
+                class="form-control border-0 shadow-none ps-1 ps-sm-2"
+                placeholder="Search..."
+                aria-label="Search..." />
+            </div>
+          </div>
+          <!-- /Search -->
+
+          <ul class="navbar-nav flex-row align-items-center ms-auto">
+            <!-- Place this tag where you want the button to render. -->
+            <li class="nav-item lh-1 me-3">
+              <a
+                class="github-button"
+                href="https://github.com/themeselection/sneat-html-admin-template-free"
+                data-icon="octicon-star"
+                data-size="large"
+                data-show-count="true"
+                aria-label="Star themeselection/sneat-html-admin-template-free on GitHub"
+                >Star</a
+              >
+            </li>
+
+            <!-- User -->
+            <li class="nav-item navbar-dropdown dropdown-user dropdown">
+              <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
+                <div class="avatar avatar-online">
+                  <img src="../assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                </div>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li>
+                  <a class="dropdown-item" href="#">
+                    <div class="d-flex">
+                      <div class="flex-shrink-0 me-3">
+                        <div class="avatar avatar-online">
+                          <img src="../assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                        </div>
+                      </div>
+                      <div class="flex-grow-1">
+                        <span class="fw-medium d-block">John Doe</span>
+                        <small class="text-muted">Admin</small>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <div class="dropdown-divider"></div>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">
+                    <i class="bx bx-user me-2"></i>
+                    <span class="align-middle">My Profile</span>
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">
+                    <i class="bx bx-cog me-2"></i>
+                    <span class="align-middle">Settings</span>
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">
+                    <span class="d-flex align-items-center align-middle">
+                      <i class="flex-shrink-0 bx bx-credit-card me-2"></i>
+                      <span class="flex-grow-1 align-middle ms-1">Billing</span>
+                      <span class="flex-shrink-0 badge badge-center rounded-pill bg-danger w-px-20 h-px-20">4</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <div class="dropdown-divider"></div>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="javascript:void(0);">
+                    <i class="bx bx-power-off me-2"></i>
+                    <span class="align-middle">Log Out</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <!--/ User -->
+          </ul>
+        </div>
+      </nav>
+
+      <!-- / Navbar -->
+
+      <!-- Content wrapper -->
+      <div class="content-wrapper">
+        <!-- Content -->
+
+        <div class="container-xxl flex-grow-1 container-p-y">
+          <div class="row">
+            <div class="col-lg-8 mb-4 order-0">
+              <div class="card">
+                <div class="d-flex align-items-end row">
+                  <div class="col-sm-7">
+                    <div class="card-body">
+                      <h5 class="card-title text-primary">Congratulations John! 🎉</h5>
+                      <p class="mb-4">
+                        You have done <span class="fw-medium">72%</span> more sales today. Check your new badge in
+                        your profile.
+                      </p>
+
+                      <a href="javascript:;" class="btn btn-sm btn-outline-primary">View Badges</a>
+                    </div>
+                  </div>
+                  <div class="col-sm-5 text-center text-sm-left">
+                    <div class="card-body pb-0 px-0 px-md-4">
+                      <img
+                        src="../assets/img/illustrations/man-with-laptop-light.png"
+                        height="140"
+                        alt="View Badge User"
+                        data-app-dark-img="illustrations/man-with-laptop-dark.png"
+                        data-app-light-img="illustrations/man-with-laptop-light.png" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-4 order-1">
+              <div class="row">
+                <div class="col-lg-6 col-md-12 col-6 mb-4">
+                  <div class="card">
+                    <div class="card-body">
+                      <div class="card-title d-flex align-items-start justify-content-between">
+                        <div class="avatar flex-shrink-0">
+                          <img
+                            src="../assets/img/icons/unicons/chart-success.png"
+                            alt="chart success"
+                            class="rounded" />
+                        </div>
+                        <div class="dropdown">
+                          <button
+                            class="btn p-0"
+                            type="button"
+                            id="cardOpt3"
+                            data-bs-toggle="dropdown"
+                            aria-haspopup="true"
+                            aria-expanded="false">
+                            <i class="bx bx-dots-vertical-rounded"></i>
+                          </button>
+                          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt3">
+                            <a class="dropdown-item" href="javascript:void(0);">View More</a>
+                            <a class="dropdown-item" href="javascript:void(0);">Delete</a>
+                          </div>
+                        </div>
+                      </div>
+                      <span class="fw-medium d-block mb-1">Profit</span>
+                      <h3 class="card-title mb-2">$12,628</h3>
+                      <small class="text-success fw-medium"><i class="bx bx-up-arrow-alt"></i> +72.80%</small>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6 col-md-12 col-6 mb-4">
+                  <div class="card">
+                    <div class="card-body">
+                      <div class="card-title d-flex align-items-start justify-content-between">
+                        <div class="avatar flex-shrink-0">
+                          <img
+                            src="../assets/img/icons/unicons/wallet-info.png"
+                            alt="Credit Card"
+                            class="rounded" />
+                        </div>
+                        <div class="dropdown">
+                          <button
+                            class="btn p-0"
+                            type="button"
+                            id="cardOpt6"
+                            data-bs-toggle="dropdown"
+                            aria-haspopup="true"
+                            aria-expanded="false">
+                            <i class="bx bx-dots-vertical-rounded"></i>
+                          </button>
+                          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt6">
+                            <a class="dropdown-item" href="javascript:void(0);">View More</a>
+                            <a class="dropdown-item" href="javascript:void(0);">Delete</a>
+                          </div>
+                        </div>
+                      </div>
+                      <span>Sales</span>
+                      <h3 class="card-title text-nowrap mb-1">$4,679</h3>
+                      <small class="text-success fw-medium"><i class="bx bx-up-arrow-alt"></i> +28.42%</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Total Revenue -->
+            <div class="col-12 col-lg-8 order-2 order-md-3 order-lg-2 mb-4">
+              <div class="card">
+                <div class="row row-bordered g-0">
+                  <div class="col-md-8">
+                    <h5 class="card-header m-0 me-2 pb-3">Total Revenue</h5>
+                    <div id="totalRevenueChart" class="px-2"></div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="card-body">
+                      <div class="text-center">
+                        <div class="dropdown">
+                          <button
+                            class="btn btn-sm btn-outline-primary dropdown-toggle"
+                            type="button"
+                            id="growthReportId"
+                            data-bs-toggle="dropdown"
+                            aria-haspopup="true"
+                            aria-expanded="false">
+                            2022
+                          </button>
+                          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="growthReportId">
+                            <a class="dropdown-item" href="javascript:void(0);">2021</a>
+                            <a class="dropdown-item" href="javascript:void(0);">2020</a>
+                            <a class="dropdown-item" href="javascript:void(0);">2019</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div id="growthChart"></div>
+                    <div class="text-center fw-medium pt-3 mb-2">62% Company Growth</div>
+
+                    <div class="d-flex px-xxl-4 px-lg-2 p-4 gap-xxl-3 gap-lg-1 gap-3 justify-content-between">
+                      <div class="d-flex">
+                        <div class="me-2">
+                          <span class="badge bg-label-primary p-2"><i class="bx bx-dollar text-primary"></i></span>
+                        </div>
+                        <div class="d-flex flex-column">
+                          <small>2022</small>
+                          <h6 class="mb-0">$32.5k</h6>
+                        </div>
+                      </div>
+                      <div class="d-flex">
+                        <div class="me-2">
+                          <span class="badge bg-label-info p-2"><i class="bx bx-wallet text-info"></i></span>
+                        </div>
+                        <div class="d-flex flex-column">
+                          <small>2021</small>
+                          <h6 class="mb-0">$41.2k</h6>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--/ Total Revenue -->
+            <div class="col-12 col-md-8 col-lg-4 order-3 order-md-2">
+              <div class="row">
+                <div class="col-6 mb-4">
+                  <div class="card">
+                    <div class="card-body">
+                      <div class="card-title d-flex align-items-start justify-content-between">
+                        <div class="avatar flex-shrink-0">
+                          <img src="../assets/img/icons/unicons/paypal.png" alt="Credit Card" class="rounded" />
+                        </div>
+                        <div class="dropdown">
+                          <button
+                            class="btn p-0"
+                            type="button"
+                            id="cardOpt4"
+                            data-bs-toggle="dropdown"
+                            aria-haspopup="true"
+                            aria-expanded="false">
+                            <i class="bx bx-dots-vertical-rounded"></i>
+                          </button>
+                          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt4">
+                            <a class="dropdown-item" href="javascript:void(0);">View More</a>
+                            <a class="dropdown-item" href="javascript:void(0);">Delete</a>
+                          </div>
+                        </div>
+                      </div>
+                      <span class="d-block mb-1">Payments</span>
+                      <h3 class="card-title text-nowrap mb-2">$2,456</h3>
+                      <small class="text-danger fw-medium"><i class="bx bx-down-arrow-alt"></i> -14.82%</small>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-6 mb-4">
+                  <div class="card">
+                    <div class="card-body">
+                      <div class="card-title d-flex align-items-start justify-content-between">
+                        <div class="avatar flex-shrink-0">
+                          <img src="../assets/img/icons/unicons/cc-primary.png" alt="Credit Card" class="rounded" />
+                        </div>
+                        <div class="dropdown">
+                          <button
+                            class="btn p-0"
+                            type="button"
+                            id="cardOpt1"
+                            data-bs-toggle="dropdown"
+                            aria-haspopup="true"
+                            aria-expanded="false">
+                            <i class="bx bx-dots-vertical-rounded"></i>
+                          </button>
+                          <div class="dropdown-menu" aria-labelledby="cardOpt1">
+                            <a class="dropdown-item" href="javascript:void(0);">View More</a>
+                            <a class="dropdown-item" href="javascript:void(0);">Delete</a>
+                          </div>
+                        </div>
+                      </div>
+                      <span class="fw-medium d-block mb-1">Transactions</span>
+                      <h3 class="card-title mb-2">$14,857</h3>
+                      <small class="text-success fw-medium"><i class="bx bx-up-arrow-alt"></i> +28.14%</small>
+                    </div>
+                  </div>
+                </div>
+                <!-- </div>
+<div class="row"> -->
+                <div class="col-12 mb-4">
+                  <div class="card">
+                    <div class="card-body">
+                      <div class="d-flex justify-content-between flex-sm-row flex-column gap-3">
+                        <div class="d-flex flex-sm-column flex-row align-items-start justify-content-between">
+                          <div class="card-title">
+                            <h5 class="text-nowrap mb-2">Profile Report</h5>
+                            <span class="badge bg-label-warning rounded-pill">Year 2021</span>
+                          </div>
+                          <div class="mt-sm-auto">
+                            <small class="text-success text-nowrap fw-medium"
+                              ><i class="bx bx-chevron-up"></i> 68.2%</small
+                            >
+                            <h3 class="mb-0">$84,686k</h3>
+                          </div>
+                        </div>
+                        <div id="profileReportChart"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <!-- Order Statistics -->
+            <div class="col-md-6 col-lg-4 col-xl-4 order-0 mb-4">
+              <div class="card h-100">
+                <div class="card-header d-flex align-items-center justify-content-between pb-0">
+                  <div class="card-title mb-0">
+                    <h5 class="m-0 me-2">Order Statistics</h5>
+                    <small class="text-muted">42.82k Total Sales</small>
+                  </div>
+                  <div class="dropdown">
+                    <button
+                      class="btn p-0"
+                      type="button"
+                      id="orederStatistics"
+                      data-bs-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false">
+                      <i class="bx bx-dots-vertical-rounded"></i>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="orederStatistics">
+                      <a class="dropdown-item" href="javascript:void(0);">Select All</a>
+                      <a class="dropdown-item" href="javascript:void(0);">Refresh</a>
+                      <a class="dropdown-item" href="javascript:void(0);">Share</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="d-flex justify-content-between align-items-center mb-3">
+                    <div class="d-flex flex-column align-items-center gap-1">
+                      <h2 class="mb-2">8,258</h2>
+                      <span>Total Orders</span>
+                    </div>
+                    <div id="orderStatisticsChart"></div>
+                  </div>
+                  <ul class="p-0 m-0">
+                    <li class="d-flex mb-4 pb-1">
+                      <div class="avatar flex-shrink-0 me-3">
+                        <span class="avatar-initial rounded bg-label-primary"
+                          ><i class="bx bx-mobile-alt"></i
+                        ></span>
+                      </div>
+                      <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                        <div class="me-2">
+                          <h6 class="mb-0">Electronic</h6>
+                          <small class="text-muted">Mobile, Earbuds, TV</small>
+                        </div>
+                        <div class="user-progress">
+                          <small class="fw-medium">82.5k</small>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="d-flex mb-4 pb-1">
+                      <div class="avatar flex-shrink-0 me-3">
+                        <span class="avatar-initial rounded bg-label-success"><i class="bx bx-closet"></i></span>
+                      </div>
+                      <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                        <div class="me-2">
+                          <h6 class="mb-0">Fashion</h6>
+                          <small class="text-muted">T-shirt, Jeans, Shoes</small>
+                        </div>
+                        <div class="user-progress">
+                          <small class="fw-medium">23.8k</small>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="d-flex mb-4 pb-1">
+                      <div class="avatar flex-shrink-0 me-3">
+                        <span class="avatar-initial rounded bg-label-info"><i class="bx bx-home-alt"></i></span>
+                      </div>
+                      <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                        <div class="me-2">
+                          <h6 class="mb-0">Decor</h6>
+                          <small class="text-muted">Fine Art, Dining</small>
+                        </div>
+                        <div class="user-progress">
+                          <small class="fw-medium">849k</small>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="d-flex">
+                      <div class="avatar flex-shrink-0 me-3">
+                        <span class="avatar-initial rounded bg-label-secondary"
+                          ><i class="bx bx-football"></i
+                        ></span>
+                      </div>
+                      <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                        <div class="me-2">
+                          <h6 class="mb-0">Sports</h6>
+                          <small class="text-muted">Football, Cricket Kit</small>
+                        </div>
+                        <div class="user-progress">
+                          <small class="fw-medium">99</small>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!--/ Order Statistics -->
+
+            <!-- Expense Overview -->
+            <div class="col-md-6 col-lg-4 order-1 mb-4">
+              <div class="card h-100">
+                <div class="card-header">
+                  <ul class="nav nav-pills" role="tablist">
+                    <li class="nav-item">
+                      <button
+                        type="button"
+                        class="nav-link active"
+                        role="tab"
+                        data-bs-toggle="tab"
+                        data-bs-target="#navs-tabs-line-card-income"
+                        aria-controls="navs-tabs-line-card-income"
+                        aria-selected="true">
+                        Income
+                      </button>
+                    </li>
+                    <li class="nav-item">
+                      <button type="button" class="nav-link" role="tab">Expenses</button>
+                    </li>
+                    <li class="nav-item">
+                      <button type="button" class="nav-link" role="tab">Profit</button>
+                    </li>
+                  </ul>
+                </div>
+                <div class="card-body px-0">
+                  <div class="tab-content p-0">
+                    <div class="tab-pane fade show active" id="navs-tabs-line-card-income" role="tabpanel">
+                      <div class="d-flex p-4 pt-3">
+                        <div class="avatar flex-shrink-0 me-3">
+                          <img src="../assets/img/icons/unicons/wallet.png" alt="User" />
+                        </div>
+                        <div>
+                          <small class="text-muted d-block">Total Balance</small>
+                          <div class="d-flex align-items-center">
+                            <h6 class="mb-0 me-1">$459.10</h6>
+                            <small class="text-success fw-medium">
+                              <i class="bx bx-chevron-up"></i>
+                              42.9%
+                            </small>
+                          </div>
+                        </div>
+                      </div>
+                      <div id="incomeChart"></div>
+                      <div class="d-flex justify-content-center pt-4 gap-2">
+                        <div class="flex-shrink-0">
+                          <div id="expensesOfWeek"></div>
+                        </div>
+                        <div>
+                          <p class="mb-n1 mt-1">Expenses This Week</p>
+                          <small class="text-muted">$39 less than last week</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--/ Expense Overview -->
+
+            <!-- Transactions -->
+            <div class="col-md-6 col-lg-4 order-2 mb-4">
+              <div class="card h-100">
+                <div class="card-header d-flex align-items-center justify-content-between">
+                  <h5 class="card-title m-0 me-2">Transactions</h5>
+                  <div class="dropdown">
+                    <button
+                      class="btn p-0"
+                      type="button"
+                      id="transactionID"
+                      data-bs-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false">
+                      <i class="bx bx-dots-vertical-rounded"></i>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="transactionID">
+                      <a class="dropdown-item" href="javascript:void(0);">Last 28 Days</a>
+                      <a class="dropdown-item" href="javascript:void(0);">Last Month</a>
+                      <a class="dropdown-item" href="javascript:void(0);">Last Year</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <ul class="p-0 m-0">
+                    <li class="d-flex mb-4 pb-1">
+                      <div class="avatar flex-shrink-0 me-3">
+                        <img src="../assets/img/icons/unicons/paypal.png" alt="User" class="rounded" />
+                      </div>
+                      <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                        <div class="me-2">
+                          <small class="text-muted d-block mb-1">Paypal</small>
+                          <h6 class="mb-0">Send money</h6>
+                        </div>
+                        <div class="user-progress d-flex align-items-center gap-1">
+                          <h6 class="mb-0">+82.6</h6>
+                          <span class="text-muted">USD</span>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="d-flex mb-4 pb-1">
+                      <div class="avatar flex-shrink-0 me-3">
+                        <img src="../assets/img/icons/unicons/wallet.png" alt="User" class="rounded" />
+                      </div>
+                      <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                        <div class="me-2">
+                          <small class="text-muted d-block mb-1">Wallet</small>
+                          <h6 class="mb-0">Mac'D</h6>
+                        </div>
+                        <div class="user-progress d-flex align-items-center gap-1">
+                          <h6 class="mb-0">+270.69</h6>
+                          <span class="text-muted">USD</span>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="d-flex mb-4 pb-1">
+                      <div class="avatar flex-shrink-0 me-3">
+                        <img src="../assets/img/icons/unicons/chart.png" alt="User" class="rounded" />
+                      </div>
+                      <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                        <div class="me-2">
+                          <small class="text-muted d-block mb-1">Transfer</small>
+                          <h6 class="mb-0">Refund</h6>
+                        </div>
+                        <div class="user-progress d-flex align-items-center gap-1">
+                          <h6 class="mb-0">+637.91</h6>
+                          <span class="text-muted">USD</span>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="d-flex mb-4 pb-1">
+                      <div class="avatar flex-shrink-0 me-3">
+                        <img src="../assets/img/icons/unicons/cc-success.png" alt="User" class="rounded" />
+                      </div>
+                      <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                        <div class="me-2">
+                          <small class="text-muted d-block mb-1">Credit Card</small>
+                          <h6 class="mb-0">Ordered Food</h6>
+                        </div>
+                        <div class="user-progress d-flex align-items-center gap-1">
+                          <h6 class="mb-0">-838.71</h6>
+                          <span class="text-muted">USD</span>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="d-flex mb-4 pb-1">
+                      <div class="avatar flex-shrink-0 me-3">
+                        <img src="../assets/img/icons/unicons/wallet.png" alt="User" class="rounded" />
+                      </div>
+                      <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                        <div class="me-2">
+                          <small class="text-muted d-block mb-1">Wallet</small>
+                          <h6 class="mb-0">Starbucks</h6>
+                        </div>
+                        <div class="user-progress d-flex align-items-center gap-1">
+                          <h6 class="mb-0">+203.33</h6>
+                          <span class="text-muted">USD</span>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="d-flex">
+                      <div class="avatar flex-shrink-0 me-3">
+                        <img src="../assets/img/icons/unicons/cc-warning.png" alt="User" class="rounded" />
+                      </div>
+                      <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                        <div class="me-2">
+                          <small class="text-muted d-block mb-1">Mastercard</small>
+                          <h6 class="mb-0">Ordered Food</h6>
+                        </div>
+                        <div class="user-progress d-flex align-items-center gap-1">
+                          <h6 class="mb-0">-92.45</h6>
+                          <span class="text-muted">USD</span>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!--/ Transactions -->
+          </div>
+        </div>
+        <!-- / Content -->
+
+        <!-- Footer -->
+        <footer class="content-footer footer bg-footer-theme">
+          <div class="container-xxl d-flex flex-wrap justify-content-between py-2 flex-md-row flex-column">
+            <div class="mb-2 mb-md-0">
+              ©
+              <script>
+                document.write(new Date().getFullYear());
+              </script>
+              , made with ❤️ by
+              <a href="https://themeselection.com" target="_blank" class="footer-link fw-medium">ThemeSelection</a>
+            </div>
+            <div class="d-none d-lg-inline-block">
+              <a href="https://themeselection.com/license/" class="footer-link me-4" target="_blank">License</a>
+              <a href="https://themeselection.com/" target="_blank" class="footer-link me-4">More Themes</a>
+
+              <a
+                href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/documentation/"
+                target="_blank"
+                class="footer-link me-4"
+                >Documentation</a
+              >
+
+              <a
+                href="https://github.com/themeselection/sneat-html-admin-template-free/issues"
+                target="_blank"
+                class="footer-link"
+                >Support</a
+              >
+            </div>
+          </div>
+        </footer>
+        <!-- / Footer -->
+
+        <div class="content-backdrop fade"></div>
+      </div>
+      <!-- Content wrapper -->
+    </div>
+    <!-- / Layout page -->
+  </div>
+
+  <!-- Overlay -->
+  <div class="layout-overlay layout-menu-toggle"></div>
+</div>
 
 
 <router-outlet></router-outlet>
